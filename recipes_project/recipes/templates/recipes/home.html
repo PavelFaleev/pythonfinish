@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Добро пожаловать в приложение для рецептов</h1>
+
+    <h2>Список рецептов:</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li>
+                <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a>
+            </li>
+        {% empty %}
+            <li>Нет рецептов для отображения.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_recipe' %}">Добавить новый рецепт</a>
+{% endblock %}
