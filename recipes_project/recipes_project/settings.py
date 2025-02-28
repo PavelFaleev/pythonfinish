@@ -38,7 +38,7 @@ ROOT_URLCONF = 'recipes_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'recipes' / 'templates'],  # Это путь к папке с вашими шаблонами
+        'DIRS': [BASE_DIR / 'recipes' / 'templates'],  # Указываем папку templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -57,12 +57,8 @@ WSGI_APPLICATION = 'recipes_project.wsgi.application'
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
