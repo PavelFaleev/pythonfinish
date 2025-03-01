@@ -17,7 +17,7 @@ class Recipe(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)  # Автор рецепта
     categories = models.ManyToManyField(Category)  # Категории рецепта
     steps = models.TextField()  # Этапы приготовления
-    ingredients = models.TextField(default='')  # Ингредиенты рецепта (если необходимо)
+    ingredients = models.TextField(default='')  # Ингредиенты рецепта
 
     def __str__(self):
         return self.title

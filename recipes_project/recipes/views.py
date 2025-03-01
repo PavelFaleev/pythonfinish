@@ -21,10 +21,10 @@ def add_recipe(request):
 
 # Страница списка рецептов
 def recipes_list(request):
-    recipes = Recipe.objects.all()  # Получаем все рецепты из базы данных
+    recipes = Recipe.objects.all()  # Получаем все данных
     return render(request, 'recipes/recipes_list.html', {'recipes': recipes})
 
-# Страница с подробной информацией о рецепте
+# Страница с подробной информацией 
 def recipe_detail(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     return render(request, 'recipes/recipe_detail.html', {'recipe': recipe})

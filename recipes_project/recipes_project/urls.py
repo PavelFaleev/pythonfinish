@@ -29,6 +29,6 @@ urlpatterns = [
     path('add_recipe/', views.add_recipe, name='add_recipe'),
 ]
 
-# Для обслуживания медиафайлов в режиме разработки
+# Для обслуживания медиафайлов в режиме разраб
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
